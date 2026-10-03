@@ -1,4 +1,35 @@
-# Executable ArchitectureLab
+# ArchitectureLab — WebMCP
+
+**A shared architecture model for a person and an AI agent, with human approval for changes.**
+
+Select a request flow, let an agent inspect the selected context and simulate a failure, then review its proposed patch before applying it. This is a portfolio fork of the [team repository](https://github.com/UniverseScripts/webmcp).
+
+[Live studio](https://architecturelab.vercel.app) · [Tool registry](https://architecturelab.vercel.app/debug) · [My portfolio](https://github.com/khanhtuongnakitomo)
+
+## My contributions
+
+I hardened the boundary between a proposed patch and an applied change:
+
+- Reject stale proposals after the graph revision changes.
+- Validate patch targets, payloads, endpoints, and metadata.
+- Require contiguous flow selections before exposing scoped analysis tools.
+- Surface stale drafts and add regression coverage.
+
+Evidence: [merged PR #2](https://github.com/UniverseScripts/webmcp/pull/2).
+
+## Interaction flow
+
+```text
+Select a flow → Inspect scoped context → Simulate → Propose → Human approval
+```
+
+**Stack:** React, TypeScript, Vite, and WebMCP. Agent interaction requires a browser/client with compatible WebMCP support. Client support changes over time; consult the original project's current compatibility notes when trying the demo.
+
+The original team documentation below explains registered tools, sample interactions, and safety boundaries.
+
+---
+
+## Developer documentation
 
 A WebMCP-native architecture studio where a person and an AI agent share the same live system
 model: you select a request flow, the agent inspects exactly that scope, runs a deterministic
